@@ -44,3 +44,23 @@ def averageGrade(student):
         sum += grade
     return sum/np.size(student)
 
+
+def maxAverage(matrix):
+    """
+    returns a list of grades of the best student (best = max(averageGrade()))
+    """
+    average_grades = []
+    for student in matrix:
+        average_grades.append(student)
+    average_grades_obj = np.array(average_grades)
+    return matrix[average_grades_obj.argmax()]
+
+def minAverage(matrix):
+    """
+    returns a list of grades of the best student (best = max(averageGrade()))
+    """
+    average_grades = []
+    for student in matrix:
+        average_grades.append(student)
+    average_grades_obj = np.array(average_grades)
+    return matrix[average_grades_obj.argmin()]
