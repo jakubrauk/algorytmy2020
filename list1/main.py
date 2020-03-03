@@ -1,6 +1,6 @@
 import numpy as np
 from random import randrange, randint
-
+import matplotlib.pyplot as plt
 
 def randomGrade(start, stop, step):
     return randint(0, int((stop - start) / step)) * step + start
@@ -110,3 +110,6 @@ def studentsBetterThan(matrix, param):
 
 x = createMatrix(4,4)
 print(x)
+
+plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
+plt.savefig('demo.png')
