@@ -17,7 +17,7 @@ def createMatrix(row_quant, col_quant):
             row.append(randomGrade(2.0, 5.5, 0.5))
         matrix.append(row)
     np_matrix = np.array(matrix)
-    
+
     return np_matrix
 
 
@@ -37,4 +37,13 @@ def howManyFailed(matrix, n):
     return students
 
 
+def averageGrade(student):
+    """
+    returns avarege grade of a student (row in matrix)
+    """
+    sum = 0
+    for grade in student:
+        sum += grade
+
+    return sum/np.size(student)
 
