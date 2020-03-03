@@ -91,3 +91,22 @@ def theBestStudent(matrix):
         how_many_grades.append(counter)
     how_many_grades = np.array(how_many_grades)
     return matrix[np.array(allmax(how_many_grades))]
+
+
+def studentsBetterThan(matrix, param):
+    """
+    returns np.array of students that average grade is >= param
+    """
+    students_average = []
+    for student in matrix:
+        students_average.append(averageGrade(student))
+    students_average = np.array(students_average)
+    list_of_students = []
+    for i in range(0, len(students_average)):
+        if students_average[i] >= param:
+            list_of_students.append(i)
+    return matrix[list_of_students]
+
+
+x = createMatrix(4,4)
+print(x)
