@@ -39,10 +39,7 @@ def averageGrade(student):
     """
     returns avarege grade of a student (row in matrix)
     """
-    sum = 0
-    for grade in student:
-        sum += grade
-    return sum/np.size(student)
+    return np.average(student)
 
 
 def maxAverage(matrix):
@@ -51,7 +48,7 @@ def maxAverage(matrix):
     """
     average_grades = []
     for student in matrix:
-        average_grades.append(student)
+        average_grades.append(averageGrade(student))
     average_grades_obj = np.array(average_grades)
     return matrix[average_grades_obj.argmax()]
 
@@ -61,6 +58,36 @@ def minAverage(matrix):
     """
     average_grades = []
     for student in matrix:
-        average_grades.append(student)
+        average_grades.append(averageGrade(student))
     average_grades_obj = np.array(average_grades)
     return matrix[average_grades_obj.argmin()]
+
+def allmax(a):
+    """
+    returns all max values (indexes) from array
+    """
+    if len(a) == 0:
+        return []
+    all_ = [0]
+    max_ = a[0]
+    for i in range(1, len(a)):
+        if a[i] > max_:
+            all_ = [i]
+            max_ = a[i]
+        elif a[i] == max_:
+            all_.append(i)
+    return all_
+
+def theBestStudent(matrix):
+    """
+    returns student with the highest number of the best grades
+    """
+    highest_grade = matrix.max()
+    how_many_grades = []
+    for student in matrix:
+        counter = 0
+        if student.max() == highest_grade:
+            counter += 1
+        how_many_grades.append(counter)
+    how_many_grades = np.array(how_many_grades)
+    return matrix[np.array(allmax(how_many_grades))]
