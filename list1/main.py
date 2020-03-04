@@ -1,3 +1,4 @@
+from math import fabs
 import numpy as np
 from random import randrange, randint
 import matplotlib.pyplot as plt
@@ -111,6 +112,19 @@ def studentsBetterThan(matrix, param):
             list_of_students.append(i)
     return matrix[list_of_students]
 
+def symDistance(a, b):
+    """
+    Returns symetrical distance between 2 matrices (of the same dimensions)
+    """
+    final_sum = 0
+    for i in range(np.size(a, 0)):
+        row_sum = 0
+        for j in range(np.size(a, 1)):
+            row_sum += fabs(a[i][j] - b[i][j])
+        final_sum += row_sum
+    return final_sum
+
+
 def spacer():
     print('================')
 
@@ -137,6 +151,15 @@ def zad1_5(matrix):
     print('Lista studentów ze średnimi nie mniejszymi niż 4.0:')
     print(studentsBetterThan(matrix, n))
 
+def zad2():
+    a = createMatrix(4,4)
+    b = createMatrix(4,4)
+    print('a:')
+    print(a)
+    print('b:')
+    print(b)
+    print(f'Odległośc symetryczna między macierzami a i b wynosi: {symDistance(a,b)}')
+
 if __name__ == '__main__':
     x = createMatrix(4,4)
     print(x)
@@ -144,14 +167,13 @@ if __name__ == '__main__':
     # plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
     # plt.savefig('demo.png')
 
-    # zad1_1(x)
-    # spacer()
-    # zad1_2(x)
-    # spacer()
-    # zad1_3(x)
-    # spacer()
-    # zad1_5(x)
-    # spacer()
-
-
+    zad1_1(x)
+    spacer()
+    zad1_2(x)
+    spacer()
+    zad1_3(x)
+    spacer()
+    zad1_5(x)
+    spacer()
+    zad2()
 
