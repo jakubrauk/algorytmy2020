@@ -86,8 +86,12 @@ def theBestStudent(matrix):
     how_many_grades = []
     for student in matrix:
         counter = 0
-        if student.max() == highest_grade:
-            counter += 1
+        for grade in student:
+            if grade == highest_grade:
+                counter += 1
+
+        # if student.max() == highest_grade:
+        #     counter += 1
         how_many_grades.append(counter)
     how_many_grades = np.array(how_many_grades)
     return matrix[np.array(allmax(how_many_grades))]
@@ -107,9 +111,47 @@ def studentsBetterThan(matrix, param):
             list_of_students.append(i)
     return matrix[list_of_students]
 
+def spacer():
+    print('================')
 
-x = createMatrix(4,4)
-print(x)
+def zad1_1(matrix):
+    print('Zadanie 1.1:')
+    n = int(input('Podaj n:'))
+    number_of_students = howManyFailed(matrix, n)
+    print(f'Liczba studentów, która nie zaliczyła conajmniej {n} przedmiotów: {number_of_students}')
 
-plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
-plt.savefig('demo.png')
+def zad1_2(matrix):
+    print('Zadanie 1.2:')
+    print(f'Oceny studentów z najlepszą średnią: {maxAverage(matrix)}')
+    print(f'Oceny studentów z najniższą średnią: {minAverage(matrix)}')
+
+def zad1_3(matrix):
+    print('Zadanie 1.3:')
+    print('Oceny studentów z największą liczbą ocen najwyższych:')
+    print(theBestStudent(matrix))
+
+def zad1_5(matrix):
+    print('Zadanie 1.5:')
+    # n = int(input('Podaj n: '))
+    n = 4.0
+    print('Lista studentów ze średnimi nie mniejszymi niż 4.0:')
+    print(studentsBetterThan(matrix, n))
+
+if __name__ == '__main__':
+    x = createMatrix(4,4)
+    print(x)
+    # #Save histogram into file
+    # plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
+    # plt.savefig('demo.png')
+
+    # zad1_1(x)
+    # spacer()
+    # zad1_2(x)
+    # spacer()
+    # zad1_3(x)
+    # spacer()
+    # zad1_5(x)
+    # spacer()
+
+
+
