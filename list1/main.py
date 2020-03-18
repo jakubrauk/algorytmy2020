@@ -163,17 +163,21 @@ def zad2():
 if __name__ == '__main__':
     x = createMatrix(4,4)
     print(x)
-    # #Save histogram into file
-    # plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
-    # plt.savefig('demo.png')
 
-    zad1_1(x)
-    spacer()
-    zad1_2(x)
-    spacer()
-    zad1_3(x)
-    spacer()
-    zad1_5(x)
-    spacer()
+    #Save histogram into file
+    plt.hist(x, bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5])
+    plt.savefig('demo.png')
+
+    # zad1_1(x)
+    # spacer()
+    # zad1_2(x)
+    # spacer()
+    # zad1_3(x)
+    # spacer()
+    # zad1_5(x)
+    # spacer()
     zad2()
+    # spacer()
+    # for i in range(0, x.shape[0]):
+    #     print(np.histogram(x[i], bins=[2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5]))
 

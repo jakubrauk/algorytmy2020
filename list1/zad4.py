@@ -15,11 +15,11 @@ def totalCost(receipts):
 		final_cost = products[order[2]][1] * order[3]
 		print(f'Klient id: {customer_id}, zapłacił: {final_cost}zł')
 
-receipts = np.array([(1, 1, 1, 4), (2, 2, 1, 3), (3, 3, 2, 2.5)],
+receipts = np.array([(1, 1, 1, 4), (2, 2, 5, 3), (3, 3, 3, 2.5)],
 	dtype=[('receipt_id', '<i4'), ('customer_id', '<i4'), ('product_id', '<i4'), ('product_quant', '<f4')])
 
 products = np.array([(1, 2.5, 'pieces'), (2, 5, 'kg')],
 	dtype=[('product_id', '<i4'), ('price', '<f4'), ('piece_or_kg', '<U32')])
 
 productExits(receipts, products)
-totalCost(receipts)
+# totalCost(receipts)
