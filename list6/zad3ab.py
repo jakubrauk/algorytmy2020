@@ -1,3 +1,4 @@
+# podpunkt a z zadania 3
 def lsc(word1, word2):
     """Funkcja zwraca największą długość wsólnego podciągu dwóch wyrazów (bez przerw między charakterami)"""
     len1 = len(word1)
@@ -16,7 +17,7 @@ def lsc(word1, word2):
                 counter[i][j] = 0                          # Jeśli
     return len(word1[i_longest - combo: i_longest])        # Zwraca długość najdłuższgeo podciągu
 
-
+# podpunkt b z zadania 3
 def lsc2(word1, word2):
     """Zwraca długość najdłuższego wspólnego podciągu znaków dla dwóch tekstów (z przerwami)"""
     len1 = len(word1)
