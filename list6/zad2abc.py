@@ -223,7 +223,7 @@ if __name__ == '__main__':
     print(whatLanguage(de_text, pl_letter_freq, eng_letter_freq, de_letter_freq))
     print(whatLanguage(eng_text, pl_letter_freq, eng_letter_freq, de_letter_freq))
 
-    print('================ ZADANIE 2B ==================')
+    print('================ ZADANIE 2C ==================')
 
     # Puste tablice samogłosek i spółgłosek
     pl_vowel_and_consonant_freq = {
